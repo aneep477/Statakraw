@@ -1,16 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="theme-color" content="#317EFB"/>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Sepaktakraw PWA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sepaktakraw Stats Web</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Selamat Datang ke Sepaktakraw PWA</h1>
-    <p>Aplikasi ini berfungsi secara luar talian (offline).</p>
-    <script src="app.js"></script>
+  <h1>Sepaktakraw Stats - Game 1</h1>
+  <div class="score">
+    Us: <span id="usScore">0</span> | Them: <span id="themScore">0</span> | Rotation: <span id="rotation">1</span>
+  </div>
+  <div class="players">
+    <h3>Our Lineup</h3>
+    <ul id="playerList">
+      <li>RS1: Pemain1 (Utama)</li>
+      <li>2: Pemain2 (Utama)</li>
+      <li>3: Pemain3 (Utama)</li>
+      <li>R1: Simpanan1</li>
+      <li>R2: Simpanan2</li>
+    </ul>
+  </div>
+  <div class="grid">
+    <!-- Butang Earned (Hijau) -->
+    <button class="green" onclick="recordAction('Spike', 'earned')">Spike</button>
+    <button class="green" onclick="recordAction('Tip', 'earned')">Tip</button>
+    <button class="green" onclick="recordAction('Dump', 'earned')">Dump</button>
+    <button class="green" onclick="recordAction('Down Ball Hit', 'earned')">Down Ball Hit</button>
+    <button class="green" onclick="recordAction('Block', 'earned')">Block</button>
+    <button class="green" onclick="recordAction('Assist', 'earned')">Assist</button>
+    <!-- Butang Errors (Oren/Merah) -->
+    <button class="orange" onclick="recordAction('Serve Error', 'error')">Serve Error</button>
+    <button class="orange" onclick="recordAction('Spike Error', 'error')">Spike Error</button>
+    <button class="orange" onclick="recordAction('Dig Error', 'error')">Dig Error</button>
+    <button class="orange" onclick="recordAction('Dump Error', 'error')">Dump Error</button>
+    <button class="orange" onclick="recordAction('Down Ball Error', 'error')">Down Ball Error</button>
+    <button class="orange" onclick="recordAction('Block Error', 'error')">Block Error</button>
+    <button class="red" onclick="recordAction('Whose Fault?', 'fault')">Whose Fault?</button>
+    <!-- Butang Lain -->
+    <button class="blue" onclick="changeRotation()">Change Rotation</button>
+    <button class="purple" onclick="changeServer()">Change Server</button>
+    <button class="purple" onclick="timeOut()">Time Out</button>
+  </div>
+  <div class="actions">
+    <button onclick="saveData()">Save</button>
+    <button onclick="clearData()">Clear</button>
+    <button onclick="updateStatsTable()">Refresh Stats</button>
+  </div>
+  <h3>Statistik Individu</h3>
+  <table id="statsTable">
+    <thead>
+      <tr>
+        <th>Pemain</th>
+        <th>Points Won</th>
+        <th>Errors</th>
+        <th>Total Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data akan diisi secara dinamik -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
 </body>
 </html>
