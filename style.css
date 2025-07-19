@@ -1,111 +1,123 @@
 body {
-  background: #1e1e1e;
-  color: white;
+  background: white;
+  color: black;
   font-family: Arial, sans-serif;
   padding: 20px;
   margin: 0;
 }
 
 h1 {
-  text-align: center;
-  color: #fff;
+  text-align: left;
+  color: black;
 }
 
 .score-board {
-  text-align: center;
-  font-size: 24px;
+  text-align: left;
+  font-size: 18px;
   margin-bottom: 20px;
-  background: #2c2c2c;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.us-score {
-  color: #00ff00;
-  margin-right: 20px;
-}
-
-.them-score {
-  color: #ff0000;
-  margin-right: 20px;
-}
-
-.rotation {
-  color: #00bfff;
 }
 
 .players {
   margin: 20px 0;
-  background: #2c2c2c;
-  padding: 10px;
-  border-radius: 8px;
 }
 
 .players ul {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
+  padding-left: 20px;
 }
 
 .players li {
-  background: #3a3a3a;
   margin: 5px 0;
-  padding: 8px;
-  border-radius: 5px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 15px;
+.grid-sections {
+  margin-bottom: 20px;
+}
+
+.player-section {
+  margin-bottom: 15px;
+}
+
+.player-section h4 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.player-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.common-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 button {
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   cursor: pointer;
-  color: white;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: #f0f0f0;
+  color: black;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.green { background: #4caf50; }
-.orange { background: #ff9800; }
-.red { background: #f44336; }
-.purple { background: #9c27b0; }
-.blue { background: #2196f3; }
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.positive {
+  background: #d4f4dd; /* Hijau ringan untuk positif */
+  border-color: #28a745;
+}
+
+.negative {
+  background: #f8d7da; /* Merah ringan untuk negatif */
+  border-color: #dc3545;
+}
+
+.control {
+  background: #d1ecf1; /* Biru ringan untuk control */
+  border-color: #0c5460;
+}
+
+.action-btn {
+  background: #e2e3e5; /* Kelabu ringan untuk action */
+  border-color: #6c757d;
+}
 
 .actions {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 20px;
-}
-
-.actions button {
-  margin: 0 10px;
-  background: #555;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background: #2c2c2c;
-  border-radius: 8px;
-  overflow: hidden;
+  margin-top: 20px;
 }
 
 th, td {
-  border: 1px solid #444;
-  padding: 12px;
-  text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 
 th {
-  background: #ffeb3b;
+  background: #f8f9fa;
   color: black;
 }
