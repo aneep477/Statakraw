@@ -1,86 +1,107 @@
-body { 
-  background: #333; 
-  color: white; 
-  font-family: Arial, sans-serif; 
-  padding: 10px; 
+body {
+  background: #1e1e1e; /* Tema gelap seperti contoh */
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
 }
 
-h1 { 
-  text-align: center; 
+h1 {
+  text-align: center;
+  color: #fff;
 }
 
-.score { 
-  text-align: center; 
-  font-size: 24px; 
+.score-board {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.players { 
-  margin: 10px 0; 
+.us-score {
+  color: #00ff00; /* Hijau untuk Us */
+  margin-right: 20px;
 }
 
-.players ul { 
-  list-style: none; 
-  padding: 0; 
+.them-score {
+  color: #ff0000; /* Merah untuk Them */
+  margin-right: 20px;
 }
 
-.players li { 
-  background: #444; 
-  margin: 5px; 
-  padding: 5px; 
-  border-radius: 5px; 
+.rotation {
+  color: #00bfff; /* Biru untuk Rotation */
 }
 
-.grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
-  gap: 10px; 
+.players {
+  margin: 20px 0;
+  background: #2c2c2c;
+  padding: 10px;
+  border-radius: 8px;
 }
 
-button { 
-  padding: 10px; 
-  font-size: 16px; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  color: white; 
+.players ul {
+  list-style: none;
+  padding: 0;
 }
 
-.green { 
-  background: green; 
+.players li {
+  background: #3a3a3a;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
 }
 
-.orange { 
-  background: orange; 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.red { 
-  background: red; 
+button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.purple { 
-  background: purple; 
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.blue { 
-  background: blue; 
+.green { background: #4caf50; } /* Hijau cerah */
+.orange { background: #ff9800; } /* Oren */
+.red { background: #f44336; } /* Merah */
+.purple { background: #9c27b0; } /* Purple */
+.blue { background: #2196f3; } /* Biru */
+
+.actions {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.actions { 
-  margin-top: 20px; 
-  text-align: center; 
+.actions button {
+  margin: 0 10px;
 }
 
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
-  margin-top: 20px; 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2c2c2c;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-th, td { 
-  border: 1px solid #555; 
-  padding: 8px; 
-  text-align: center; 
+th, td {
+  border: 1px solid #444;
+  padding: 12px;
+  text-align: center;
 }
 
-th { 
-  background: #555; 
+th {
+  background: #ffeb3b; /* Kuning seperti table header dalam contoh */
+  color: black;
 }
