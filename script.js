@@ -3,6 +3,7 @@ let themScore = 0;
 let currentRotation = 1;
 let stats = JSON.parse(localStorage.getItem('sepaktakraw_stats')) || [];
 let players = ['Pemain1', 'Pemain2', 'Pemain3', 'Simpanan1', 'Simpanan2'];
+let spiderChart = null;
 
 // Muat data semula jika ada
 if (stats.length > 0) {
@@ -64,6 +65,47 @@ function updateStatsTable() {
     const row = document.createElement('tr');
     row.innerHTML = `<td>${player}</td><td>${pointsWon}</td><td>${errors}</td><td>${total}</td>`;
     tbody.appendChild(row);
+  });
+  updateSpiderChart();
+}
+
+function updateSpiderChart() {
+  const ctx = document.getElementById('spiderChart').getContext('2d');
+  const datasets = players.map(player => {
+    const playerStats = stats.filter(s => s.player === player);
+    const pointsWon = playerStats.filter(s => s.type === 'earned').length;
+    const errors = playerStats.filter(s => s.type === 'error' || s.type === 'fault').length;
+    const total = playerStats.length;
+    return {
+      label: player,
+      data: [pointsWon, errors, total],
+      fill: true,
+      backgroundColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`,
+      borderColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`,
+      pointBackgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`,
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    };
+  });
+
+  if (spiderChart) {
+    spiderChart.destroy();
+  }
+
+  spiderChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Points Won', 'Errors', 'Total Actions'],
+      datasets: datasets
+    },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    }
   });
 }
 
