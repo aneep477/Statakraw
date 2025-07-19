@@ -17,8 +17,6 @@ function recordAction(player, action, type) {
   if (type === 'error' || type === 'fault') themScore++;
   updateScores();
   updateStatsTable();
-  // Tambah feedback interaktif
-  alert(`${action} direkod untuk ${player}!`);
 }
 
 function updateScores() {
