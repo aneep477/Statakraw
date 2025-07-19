@@ -121,3 +121,8 @@ th {
   background: #f8f9fa;
   color: black;
 }
+
+#spiderChart {
+  margin: 20px auto;
+  display: block;
+}
