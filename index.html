@@ -8,8 +8,10 @@
 </head>
 <body>
   <h1>Sepaktakraw Stats - Game 1</h1>
-  <div class="score">
-    Us: <span id="usScore">0</span> | Them: <span id="themScore">0</span> | Rotation: <span id="rotation">1</span>
+  <div class="score-board">
+    <span class="us-score">Us: <span id="usScore">0</span></span>
+    <span class="them-score">Them: <span id="themScore">0</span></span>
+    <span class="rotation">Rotation: <span id="rotation">1</span></span>
   </div>
   <div class="players">
     <h3>Our Lineup</h3>
@@ -29,15 +31,16 @@
     <button class="green" onclick="recordAction('Down Ball Hit', 'earned')">Down Ball Hit</button>
     <button class="green" onclick="recordAction('Block', 'earned')">Block</button>
     <button class="green" onclick="recordAction('Assist', 'earned')">Assist</button>
-    <!-- Butang Errors (Oren/Merah) -->
+    <!-- Butang Errors (Oren) -->
     <button class="orange" onclick="recordAction('Serve Error', 'error')">Serve Error</button>
     <button class="orange" onclick="recordAction('Spike Error', 'error')">Spike Error</button>
     <button class="orange" onclick="recordAction('Dig Error', 'error')">Dig Error</button>
     <button class="orange" onclick="recordAction('Dump Error', 'error')">Dump Error</button>
     <button class="orange" onclick="recordAction('Down Ball Error', 'error')">Down Ball Error</button>
     <button class="orange" onclick="recordAction('Block Error', 'error')">Block Error</button>
+    <!-- Butang Faults (Merah) -->
     <button class="red" onclick="recordAction('Whose Fault?', 'fault')">Whose Fault?</button>
-    <!-- Butang Lain -->
+    <!-- Butang Controls (Biru/Purple) -->
     <button class="blue" onclick="changeRotation()">Change Rotation</button>
     <button class="purple" onclick="changeServer()">Change Server</button>
     <button class="purple" onclick="timeOut()">Time Out</button>
@@ -46,6 +49,7 @@
     <button onclick="saveData()">Save</button>
     <button onclick="clearData()">Clear</button>
     <button onclick="updateStatsTable()">Refresh Stats</button>
+    <button onclick="exportData()">Export Data (JSON)</button>
   </div>
   <h3>Statistik Individu</h3>
   <table id="statsTable">
