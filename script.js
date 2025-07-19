@@ -10,12 +10,14 @@ if (stats.length > 0) {
   updateStatsTable();
 }
 
-function recordAction(action, type) {
-  stats.push({ player: players[0], action: action, type: type, rotation: currentRotation, time: new Date().toISOString() });
+function recordAction(player, action, type) {
+  stats.push({ player: player, action: action, type: type, rotation: currentRotation, time: new Date().toISOString() });
   if (type === 'earned') usScore++;
   if (type === 'error' || type === 'fault') themScore++;
   updateScores();
   updateStatsTable();
+  // Tambah feedback interaktif
+  alert(`${action} direkod untuk ${player}!`);
 }
 
 function updateScores() {
@@ -27,6 +29,7 @@ function updateScores() {
 function changeRotation() {
   currentRotation = (currentRotation % 3) + 1;
   updateScores();
+  alert('Rotation ditukar!');
 }
 
 function changeServer() {
@@ -35,6 +38,14 @@ function changeServer() {
 
 function timeOut() {
   alert('Time Out!');
+}
+
+function playerChange() {
+  alert('Player Change!');
+}
+
+function changeSet() {
+  alert('Set ditukar!');
 }
 
 function calculateScores() {
@@ -58,7 +69,7 @@ function updateStatsTable() {
 
 function saveData() {
   localStorage.setItem('sepaktakraw_stats', JSON.stringify(stats));
-  alert('Data disimpan di localStorage untuk rujukan!');
+  alert('Data disimpan!');
 }
 
 function clearData() {
@@ -68,6 +79,7 @@ function clearData() {
   localStorage.removeItem('sepaktakraw_stats');
   updateScores();
   updateStatsTable();
+  alert('Data direset!');
 }
 
 function exportData() {
@@ -79,5 +91,5 @@ function exportData() {
   a.download = 'sepaktakraw_stats.json';
   a.click();
   URL.revokeObjectURL(url);
-  alert('Data dieksport sebagai JSON untuk rujukan! Boleh dibuka di editor teks atau import ke tools lain.');
+  alert('Data dieksport!');
 }
