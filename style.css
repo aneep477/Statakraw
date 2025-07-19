@@ -1,7 +1,86 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 2rem;
-    background-color: #f4f4f4;
+body { 
+  background: #333; 
+  color: white; 
+  font-family: Arial, sans-serif; 
+  padding: 10px; 
+}
+
+h1 { 
+  text-align: center; 
+}
+
+.score { 
+  text-align: center; 
+  font-size: 24px; 
+}
+
+.players { 
+  margin: 10px 0; 
+}
+
+.players ul { 
+  list-style: none; 
+  padding: 0; 
+}
+
+.players li { 
+  background: #444; 
+  margin: 5px; 
+  padding: 5px; 
+  border-radius: 5px; 
+}
+
+.grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
+  gap: 10px; 
+}
+
+button { 
+  padding: 10px; 
+  font-size: 16px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  color: white; 
+}
+
+.green { 
+  background: green; 
+}
+
+.orange { 
+  background: orange; 
+}
+
+.red { 
+  background: red; 
+}
+
+.purple { 
+  background: purple; 
+}
+
+.blue { 
+  background: blue; 
+}
+
+.actions { 
+  margin-top: 20px; 
+  text-align: center; 
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-top: 20px; 
+}
+
+th, td { 
+  border: 1px solid #555; 
+  padding: 8px; 
+  text-align: center; 
+}
+
+th { 
+  background: #555; 
 }
