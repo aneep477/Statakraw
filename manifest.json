@@ -1,0 +1,9 @@
+{
+  "name": "Statistik Sepaktakraw",
+  "short_name": "Sepaktakraw",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Aplikasi Statistik Sepaktakraw",
+  "icons": []
+}

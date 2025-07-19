@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistik Sepaktakraw</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="court-layout">
+    <h2>Pasukan: <input type="text" id="teamName"></h2>
+    <h2>Lawan: <input type="text" id="opponentName"></h2>
+    <h2>Tarikh: <input type="date" id="matchDate"></h2>
+    <div class="players">
+      <div class="player" id="tekong">Tekong<br><span id="tekongName">Pemain 1</span></div>
+      <div class="player" id="feeder">Feeder<br><span id="feederName">Pemain 2</span></div>
+      <div class="player" id="killer">Killer<br><span id="killerName">Pemain 3</span></div>
+    </div>
+    <div class="actions">
+      <button onclick="recordAction('Kill')">Kill</button>
+      <button onclick="recordAction('Assist')">Assist</button>
+      <button onclick="recordAction('Block')">Block</button>
+      <button onclick="recordAction('Feed')">Feed</button>
+      <button onclick="recordAction('Error')">Error</button>
+      <button onclick="recordAction('Pass')">Pass</button>
+      <button onclick="recordAction('Attack')">Attack</button>
+      <button onclick="recordAction('Serve')">Serve</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
